@@ -110,3 +110,9 @@ RUN pecl install xdebug \
 RUN curl -sS https://platform.sh/cli/installer | php
 
 RUN apt-get install shellcheck
+
+RUN apt-get update && apt-get -y install firefox wget bc siege apache2-utils
+
+RUN wget https://raw.githubusercontent.com/smmccabe/loadtimer/master/loadtimer \
+    && chmod +x loadtimer \
+    && mv loadtimer /usr/local/bin/loadtimer
